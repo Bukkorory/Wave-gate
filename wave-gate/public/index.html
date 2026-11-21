@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8ff">
+    <title>Wave Gate</title>
+    <link rel="icon" id="page-favicon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="gate-shell">
+      <header class="gate-header">
+        <a class="gate-brand" href="/" aria-label="Wave Gate ホーム">
+          <span class="gate-brand-mark" aria-hidden="true">W</span>
+          <span>Wave Gate</span>
+        </a>
+        <a class="header-link" href="#how-it-works">使い方</a>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-badge"><span aria-hidden="true">✦</span> SIMPLE WEB ACCESS</div>
+          <h1 id="hero-title">ウェブを、もっと自由に。</h1>
+          <p class="hero-copy">開きたいページのURLを入力してください。</p>
+
+          <form id="navigation-form" class="gate-form">
+            <label class="visually-hidden" for="url-input">開きたいページのURL</label>
+            <span class="url-icon" aria-hidden="true">↗</span>
+            <input
+              id="url-input"
+              name="url"
+              type="text"
+              inputmode="url"
+              placeholder="https://example.com"
+              autocomplete="url"
+              spellcheck="false"
+              required
+            >
+            <button type="submit">URLを準備 <span aria-hidden="true">→</span></button>
+          </form>
+
+          <p class="direct-notice">
+            <span aria-hidden="true">ⓘ</span>
+            このデモはプロキシ中継を行わず、入力したサイトを別タブで直接開きます。
+          </p>
+          <p id="navigation-status" class="gate-status" role="status" aria-live="polite"></p>
+          <a id="open-link" class="open-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+            別タブで開く <span aria-hidden="true">↗</span>
+          </a>
+        </section>
+
+        <section class="feature-grid" id="how-it-works" aria-label="このデモについて">
+          <article class="feature-card">
+            <span class="feature-icon blue" aria-hidden="true">↗</span>
+            <h2>URLを入力</h2>
+            <p>HTTPSのURLを自動補完し、入力内容を確認できます。</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon violet" aria-hidden="true">↗</span>
+            <h2>別タブで開く</h2>
+            <p>埋め込み表示は使わず、リンク先を直接開きます。</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon green" aria-hidden="true">✓</span>
+            <h2>透明性を大切に</h2>
+            <p>通信を中継・匿名化するプロキシ機能はありません。</p>
+          </article>
+        </section>
+
+        <details class="settings-details">
+          <summary>タブのタイトル・アイコン設定</summary>
+          <form id="settings-form" class="settings-form">
+            <label for="title-input">ページタイトル</label>
+            <input id="title-input" name="title" type="text" maxlength="80" placeholder="例: マイワークスペース" autocomplete="off">
+            <label for="icon-input">ファビコン画像URL</label>
+            <input id="icon-input" name="icon" type="text" maxlength="2048" placeholder="https://example.com/favicon.ico" autocomplete="url" spellcheck="false">
+            <p class="settings-hint">空欄の場合はWave Gateのアイコンを使用します。</p>
+            <div class="preset-buttons">
+              <button type="button" data-preset="search"><span class="google-mark" aria-hidden="true">G</span> Google検索風</button>
+              <button type="button" data-preset="docs"><span class="docs-mark" aria-hidden="true">▤</span> Googleドキュメント風</button>
+            </div>
+            <button class="save-settings" type="submit">設定を保存</button>
+            <p id="settings-status" class="settings-status" role="status" aria-live="polite"></p>
+          </form>
+        </details>
+      </main>
+
+      <footer class="gate-footer">Wave Gate <span aria-hidden="true">·</span> 独自のUIデモ</footer>
+    </div>
+  </body>
+</html>
